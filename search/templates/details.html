@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load staticfiles %}
+	<title>{{ title }}</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+</head>
+<body background={% static "images/details.jpg" %}>
+	<div class="container" id="rcorners3">
+		<b>Original Title</b> : {{ original_title }} <br>
+		<b>Tagline</b> : {{ tagline }} <br>
+		<b>Summary</b> : {{ overview }} <br>
+		<b>Homepage</b> : <a href="{{ homepage }}">{{ homepage }}</a> <br>
+		<b>Language</b> : {{ original_language }} <br>
+		<b>Revune</b> : $ {{ revenue }} <br>
+		<b>Release Date</b> : {{ release_date }} <br>
+		<b>Runtime</b> : {{ runtime }} mins <br>
+		<b>Rating</b> : {{ vote_average }} <br>
+	</div>
+</body>
+</html>

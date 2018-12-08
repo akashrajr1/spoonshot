@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load staticfiles %}
+	<title>Searching</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+</head>
+<body background={% static "images/movies.jpeg" %}>
+	<br>
+	<br>
+	<div class="container">
+		<form method="post" id="rcorners1">
+		{% csrf_token %}
+		{{ form.as_p }}
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<button type="submit" class="btn btn-success">Search<i class="fa fa-search"></i></button>
+		</form>
+	<br>
+	<div id="rcorners2">
+	<h4>Sorted by most popular</h4>
+	<ol>
+		{% for movie,id in movies %}
+		<li><a href="/search/{{ id }}">{{ movie }}</a></li>
+		{% endfor %}
+	</ol>
+	</div>
+	</div>
+</body>
+</html>
