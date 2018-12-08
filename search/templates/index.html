@@ -1,6 +1,8 @@
+<!-- Search Template  -->
 <!DOCTYPE html>
 <html>
 <head>
+	<!-- To load /static/ -->
 	{% load staticfiles %}
 	<title>Searching</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -21,6 +23,7 @@
 	<h4>Sorted by most popular</h4>
 	<ol>
 		{% for movie,id in movies %}
+		<!-- Redirected according to movie id -->
 		<li><a href="/search/{{ id }}">{{ movie }}</a></li>
 		{% endfor %}
 	</ol>
